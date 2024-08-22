@@ -37,31 +37,33 @@ View(global_profile)
 
 ```{r}
 OpenSearch_modification <- global_profile %>%
-    ggplot(aes(x = aa1_psm_count, 
-                y = mapped_mass_1, 
-                size = aa1_psm_count,
-                color = aa1)) +
+    ggplot(aes(x = aa1_psm_count, y = mapped_mass_1, 
+                size = aa1_psm_count, color = aa1)) +
     geom_segment(aes(xend = 0, yend = mapped_mass_1),
-            size = 0.5, show.legend = FALSE) +
+                size = 0.5, show.legend = FALSE) +
     geom_point() +
-    guides(color = guide_legend(override.aes = list(size = 8)), size = "none") +
+    guides(color = guide_legend(override.aes = list(size = 8)),
+                size = "none") +
     geom_text(aes(label = aa1_psm_count), 
-            hjust = -1, vjust = 0.5, 
-            size = 6, show.legend = FALSE) +
+                hjust = -0.5, vjust = 0.5, size = 5,
+                show.legend = FALSE) +
     labs(title = "Open search modification",
-            y = "Mapped mass",
-            x = "Weighted number of PSM",
-            color = "Amino Acid") +
+                y = "Mapped mass",
+                x = "Weighted number of PSM",
+                color = "Amino Acid") +
     theme(legend.position = "bottom",
-            legend.title.position = "top",
-            legend.title = element_text(hjust = 0.5, face = "bold", size = 15),
-            plot.title = element_text(hjust = 0.5, face = "bold", size = 20),
-            text = element_text(size = 15)) +
-        scale_color_manual(values = pals::cols25(22))
+                legend.title.position = "top",
+                legend.title = element_text(hjust = 0.5,
+                                face = "bold", size = 15),
+                plot.title = element_text(hjust = 0.5,
+                                face = "bold", size = 20),
+                text = element_text(size = 15)) +
+    scale_color_manual(values = pals::cols25(22))
 
+# See your plot
 print(OpenSearch_modification)
 
-# save your plot
+# Save your plot
 ggsave("OpenSearch_modification.png", 
     plot = OpenSearch_modification,
     width = 20, height = 10, bg = "white", 
