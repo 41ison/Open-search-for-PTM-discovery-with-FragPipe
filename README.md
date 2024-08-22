@@ -8,7 +8,7 @@ Below you find some descriptions of what we are doing in this script with the in
 `global.profile.tsv` reports the most prominent features from PTM-Shepherd analysis of mass shifts observed from FDR-filtered open search results. Each row corresponds to a different detected mass shift, thus not all PSMs will be represented in this table. Please note that mass shifts are annotated based on UniMod mapping, thus they are not definitive chemical identities and should be used as a starting point along with localization and amino acid enrichment information. Unless otherwise indicated, values are summed from all datasets in the analysis.
 
 ## The following plot is the idea of what you will extract from the PTM-Shepherd output:
-![alt text](https://github.com/41ison/Open-search-for-PTM-discovery-with-FragPipe/edit/main/OpenSearch_modification.png "Mapped mass-shift")
+![alt text](https://github.com/41ison/Open-search-for-PTM-discovery-with-FragPipe/blob/main/OpenSearch_modification.png "Mapped mass-shift")
 
 ## The following R packages are required to run this script:
 
