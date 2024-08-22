@@ -61,7 +61,9 @@ OpenSearch_modification <- global_profile %>%
                                 face = "bold", size = 15),
                 plot.title = element_text(hjust = 0.5,
                                 face = "bold", size = 20),
-                text = element_text(size = 15)) +
+                text = element_text(size = 15),
+                axis.text.x = element_text(color = "black"),
+                axis.text.y = element_text(color = "black"),) +
     scale_color_manual(values = pals::cols25(22))
 
 # See your plot
