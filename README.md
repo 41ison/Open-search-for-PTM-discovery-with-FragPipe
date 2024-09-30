@@ -12,7 +12,7 @@ Below you find some descriptions of what we are doing in this script with the in
 
 ## The following R packages are required to run this script:
 
-```{r}
+```r
 library(tidyverse)
 library(janitor)
 library(here)
@@ -24,7 +24,7 @@ theme_set(theme_minimal())
 ## Load the data from PTM Sheperd output
 Once your PTM-Shepherd analysis is done, you can put this script in the same foledr as the file called `global.profile.tsv`, then you can run the following code to load the data.
 
-```{r}
+```r
 global_profile <- read_tsv("global.profile.tsv") %>%
   clean_names()
 
@@ -38,7 +38,7 @@ View(global_profile)
 
 3. `mapped_mass_1` primary modification annotation derived from Unimod, all isobaric modifications listed and separated by “/”.
 
-```{r}
+```r
 OpenSearch_modification <- global_profile %>%
     ggplot(aes(x = aa1_psm_count, y = mapped_mass_1, 
                 size = aa1_psm_count, color = aa1)) +
